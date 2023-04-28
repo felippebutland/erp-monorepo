@@ -1,0 +1,25 @@
+
+9
+	readme.MD,c/3/c33817f2de53161d5171a9d18020e9548d4fc88e
+F
+erp-backend/.gitignore,4/e/4ebab6af8e9baf284ec958f0b1a84415e136fecb
+@
+erp-backend/mvnw,f/6/f667352b7970fbdd2beefe383a6c3b138b1f926e
+D
+erp-backend/mvnw.cmd,d/7/d76844e71d485083d5cec8d7b9e54071ac237965
+{
+Kerp-backend/src/main/java/com/example/erpbackend/ErpBackendApplication.java,6/f/6fb607800b6e6dc40a9ac8aae1ca46f0d5b3e590
+C
+erp-backend/pom.xml,1/b/1b3d5a4af8bdf533dda2daba679abafa6ef58511
+{
+Kerp-backend/src/main/java/com/example/erpbackend/config/SecurityConfig.java,0/9/09d7206c170f513264f2ffc104e3827b7cc3337a
+a
+1erp-backend/.mvn/wrapper/maven-wrapper.properties,4/5/45ba70ad8cd4b0aca5b0a3238ef0faeef4d91c6e
+e
+5erp-backend/src/main/resources/application.properties,f/f/ffb255737d6f077db92e32a115cb5fbe81586782
+s
+Cerp-backend/src/main/java/com/example/erpbackend/Entities/User.java,2/a/2a0284640f5ec6745dd8fd5821b5ddde122d0fde
+€
+Perp-backend/src/main/java/com/example/erpbackend/controllers/UserController.java,1/a/1a9cc4415f2724c9e367490fe2a82c10bf86bff6
+r
+Berp-backend/src/main/java/com/example/erpbackend/service/User.java,5/3/531e7931613d85e61628a5dfe14a58ab685c8e01
