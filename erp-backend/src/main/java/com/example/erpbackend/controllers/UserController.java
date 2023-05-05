@@ -1,4 +1,4 @@
-package com.exemple.erpbackend.controllers;
+package com.example.erpbackend.controllers;
 
 import com.example.erpbackend.Entities.UserEntity;
 import com.example.erpbackend.service.UserService;
