@@ -10,10 +10,9 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
@@ -27,8 +26,8 @@ public class UserController {
     private UserService userService;
 
     @GetMapping
-    public List<UserEntity> getUsers() {
-        return (List<UserEntity>) userService.getAllUsers();
+    public Iterable<UserEntity> getUsers() {
+        return userService.getAllUsers();
     }
 
     @PostMapping
@@ -37,29 +36,20 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public UserEntity getUserById(@PathVariable Long id) {
+    public Optional<UserEntity> getUserById(@PathVariable Long id) {
         return userService.getUserById(id);
     }
 
     @PutMapping("/{id}")
     public UserEntity updateUser(@PathVariable Long id, @RequestBody UserEntity userRequest) {
-        UserEntity user = userService.getUserById(id);
-
-        if (user == null) {
-            throw new ResourceNotFoundException("User not found with id " + id);
-        }
-
-        user.setFirstName(userRequest.getFirstName());
-        user.setLastName(userRequest.getLastName());
-        user.setEmail(userRequest.getEmail());
-        user.setPassword(userRequest.getPassword());
+        Optional<UserEntity> user = userService.getUserById(id);
 
         return userService.updateUser(user);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> deleteUser(@PathVariable Long id) {
-        UserEntity user = userService.getUserById(id);
+    public ResponseEntity<String> deleteUser(@PathVariable Long id) {
+        Optional<UserEntity> user = userService.getUserById(id);
 
         if (user == null) {
             throw new ResourceNotFoundException("User not found with id " + id);

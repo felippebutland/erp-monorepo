@@ -1,12 +1,12 @@
 package com.example.erpbackend.service;
 
-import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.erpbackend.Entities.UserEntity;
-import com.example.erpbackend.repository.UserRepository;
+import com.example.erpbackend.Repositories.UserRepository;
 
 @Service
 public class UserService {
@@ -18,7 +18,7 @@ public class UserService {
         this.userRepository = userRepository;        
     }
 
-    public List<UserEntity> getAllUsers() {
+    public Iterable<UserEntity> getAllUsers() {
         return userRepository.findAll();
     }
 
@@ -34,12 +34,12 @@ public class UserService {
         return userCreated != null ? (UserEntity) userCreated : null;
     }
 
-    public UserEntity getUserById(Long id) {
+    public Optional<UserEntity> getUserById(Long id) {
         return userRepository.findById(id);
     }
     
-    public UserEntity updateUser(UserEntity user) {
-        Object userExists = userRepository.findByEmail(user.getEmail());
+    public UserEntity updateUser(Optional<UserEntity> user) {
+        Object userExists = userRepository.findAll(user.get());
 
         if (((UserEntity) userExists).getId() == null){
             return null;
