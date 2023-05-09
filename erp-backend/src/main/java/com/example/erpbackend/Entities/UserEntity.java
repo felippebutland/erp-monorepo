@@ -1,6 +1,5 @@
 package com.example.erpbackend.Entities;
 
-import javax.annotation.processing.Generated;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 @EntityScan
