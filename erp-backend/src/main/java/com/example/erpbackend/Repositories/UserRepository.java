@@ -1,6 +1,5 @@
-package com.example.erpbackend.Repositories;
+package com.example.erpbackend.repositories;
 
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.repository.CrudRepository;
@@ -11,34 +10,15 @@ import com.example.erpbackend.Entities.UserEntity;
 @Repository
 public interface UserRepository extends CrudRepository<UserEntity, Long> {
 
+    @Bean
     UserEntity findByEmail(String email);
-
-    List<UserEntity> findAll(UserEntity userEntity);
 
     void deleteById(Long id);
 
-    default UserEntity updateUser(Optional<UserEntity> user) {
-        if (user.get() == null) {
-            throw new IllegalArgumentException("User id cannot be null");
-        }
+    Object findAll(UserEntity user);
 
-        if (!existsById(user.get())) {
-            throw new IllegalArgumentException("User does not exist");
-        }
+    Object updateUser(Optional<UserEntity> user);
 
-        return saveAll(user);
-    }
-
-    boolean existsById(UserEntity userEntity);
-
-    UserEntity saveAll(Optional<UserEntity> user);
-
-    public default UserEntity createUser(UserEntity user) {
-      return save(user);
-    }
-
-    public default Optional<UserEntity> findById(Long id) {
-      return findById(id);
-    }
+    Object createUser(UserEntity user);
 
 }
