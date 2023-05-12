@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ErpSpringApplication",
+            "request": "launch",
+            "mainClass": "com.backend.erpspring.ErpSpringApplication",
+            "projectName": "erp-spring"
+        },
+        {
+            "type": "java",
             "name": "Spring Boot-ErpSpringApplication<erp-spring>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
