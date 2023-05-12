@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.backend.erpspring.model.Category;
+import com.backend.erpspring.Entities.Category;
 import com.backend.erpspring.repository.CategoryRepository;
 
 @RestController

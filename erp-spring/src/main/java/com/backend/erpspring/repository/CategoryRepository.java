@@ -1,11 +1,13 @@
 package com.backend.erpspring.repository;
 
+import java.util.UUID;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.backend.erpspring.model.Category;
+import com.backend.erpspring.Entities.*;
 
 @Repository
-public interface CategoryRepository extends JpaRepository<Category, Integer> {
+public interface CategoryRepository extends JpaRepository<Category, UUID> {
     
 }

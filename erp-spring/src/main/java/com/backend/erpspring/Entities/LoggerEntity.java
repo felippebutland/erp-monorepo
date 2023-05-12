@@ -4,6 +4,7 @@ import java.sql.Date;
 import java.util.UUID;
 
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
@@ -26,19 +27,9 @@ public class LoggerEntity {
   private String ipAddress;
   private String message;
 
-  @ManyToMany
-    @JoinTable(
-        name = "User",
-        joinColumns = @JoinColumn(name = "id"),
-        inverseJoinColumns = @JoinColumn(name = "id")
-    )
-  private String userId;
+  @OneToOne
+  private UserEntity userId;
 
-  @ManyToMany
-    @JoinTable(
-        name = "LoggerActions",
-        joinColumns = @JoinColumn(name = "id"),
-        inverseJoinColumns = @JoinColumn(name = "id")
-    )
-  private String loggerActions;  
+  @OneToOne
+    private LoggerActionsEntity loggerActions;
 }

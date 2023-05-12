@@ -5,41 +5,31 @@ import java.util.List;
 import java.util.UUID;
 
 import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
-
 @Getter
 @Setter
 @Entity
 @Table(name = "ProfilesFeatures")
 public class ProfilesFeaturesEntity {
   @Id
-	@GeneratedValue(strategy = GenerationType.UUID)
-	private UUID id;
+  @GeneratedValue(strategy = GenerationType.UUID)
+  private UUID id;
   private Date createdAt;
   private Date updatedAt;
 
-  @OneToMany
-  @JoinTable(
-      name = "profiles",
-      joinColumns = @JoinColumn(name = "id"),
-      inverseJoinColumns = @JoinColumn(name = "id")
-  )
-  private List<ProfilesEntity> profileId;
+  @ManyToOne
+  @JoinColumn(name = "profile_id")
+  private ProfilesEntity profile;
 
-  @OneToMany
-    @JoinTable(
-        name = "features",
-        joinColumns = @JoinColumn(name = "id"),
-        inverseJoinColumns = @JoinColumn(name = "id")
-    )
-  private String featureId;
-  
+  @ManyToOne
+  @JoinColumn(name = "feature_id")
+  private FeaturesEntity feature;  
 }
