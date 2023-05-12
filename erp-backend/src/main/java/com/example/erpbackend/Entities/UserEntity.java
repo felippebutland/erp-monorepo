@@ -33,10 +33,10 @@ public class UserEntity {
     public void setEmail(String email) {
         this.email = email;
     }
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
-    public void setId(Long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
     public String getFirstName() {
