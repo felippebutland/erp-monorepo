@@ -1,22 +1,26 @@
 package com.example.erpbackend.Entities;
 
 import java.sql.Date;
+import java.util.UUID;
 
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.JoinTable;
 import javax.persistence.JoinColumn;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 @Table(name = "Logger")
 public class LoggerEntity {
-  public Long getId() {
+  public UUID getId() {
     return id;
   }
 
-  public void setId(Long id) {
+  public void setId(UUID id) {
     this.id = id;
   }
 
@@ -59,9 +63,10 @@ public class LoggerEntity {
   public void setLoggerActions(String loggerActions) {
     this.loggerActions = loggerActions;
   }
-
   @Id
-  private Long id;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id", updatable = false, unique = true, nullable = false)
+	private UUID id;
   private Date createdAt;
   private String ipAddress;
   private String message;

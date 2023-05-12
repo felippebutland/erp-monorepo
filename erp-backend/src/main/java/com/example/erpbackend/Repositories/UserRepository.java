@@ -9,8 +9,6 @@ import com.example.erpbackend.Entities.UserEntity;
 
 @Repository
 public interface UserRepository extends CrudRepository<UserEntity, Long> {
-
-    @Bean
     UserEntity findByEmail(String email);
 
     void deleteById(Long id);

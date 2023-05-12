@@ -23,11 +23,6 @@ public class UserService {
     }
 
     public UserEntity createUser(UserEntity user) {
-        Object userExists = userRepository.findByEmail(user.getEmail());
-
-        if (((UserEntity) userExists).getId() != null){
-            return null;
-        }
 
         Object userCreated = userRepository.createUser(user);
 

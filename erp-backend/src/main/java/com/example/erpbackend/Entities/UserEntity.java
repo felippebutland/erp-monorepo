@@ -1,11 +1,21 @@
 package com.example.erpbackend.Entities;
 
-import org.springframework.boot.autoconfigure.domain.EntityScan;
+import java.util.UUID;
 
-@EntityScan
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity(name = "users")
+@Table(name = "users")
 public class UserEntity {
-    @org.springframework.data.annotation.Id
-    private Long id;
+    @Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id", updatable = false, unique = true, nullable = false)
+	private UUID id;
     private String firstName;
     private String lastName;
     private String email;
