@@ -1,8 +1,10 @@
 package com.backend.erpspring.controllers;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,5 +24,15 @@ public class CategoriesController {
     @GetMapping
     public List<Category> listCategories() {
         return this.categoryRepository.findAll();
+    }
+
+    @PostMapping
+    public void createCategory(Category category) {
+        this.categoryRepository.save(category);
+    }
+
+    @GetMapping("/{id}")
+    public Category getCategory(UUID id) {
+        return this.categoryRepository.findById(id).orElseThrow();
     }
 }
