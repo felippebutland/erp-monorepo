@@ -1,10 +1,8 @@
 package com.backend.erpspring.Entities;
 
 import java.sql.Date;
-import java.util.List;
 import java.util.UUID;
 
-import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

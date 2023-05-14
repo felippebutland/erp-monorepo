@@ -7,7 +7,6 @@ import com.backend.erpspring.Enums.PaymentEnum;
 import com.backend.erpspring.Enums.PaymentStatusEnum;
 import com.backend.erpspring.Enums.ShippingStatusEnum;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
