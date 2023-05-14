@@ -12,7 +12,7 @@ import com.backend.erpspring.Entities.Category;
 import com.backend.erpspring.repository.CategoryRepository;
 
 @RestController
-@RequestMapping("/api/category")
+@RequestMapping("/category")
 public class CategoriesController {
 
     private final CategoryRepository categoryRepository;

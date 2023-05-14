@@ -13,7 +13,7 @@ import com.backend.erpspring.Entities.SalesEntity;
 import com.backend.erpspring.repository.SalesRepository;
 
 @RestController
-@RequestMapping("/api/sale")
+@RequestMapping("/sale")
 public class SalesController {
     @Autowired
     private SalesRepository salesRepository;

@@ -14,7 +14,7 @@ import com.backend.erpspring.repository.UserRepository;
 
 
 @RestController
-@RequestMapping("/api/user")
+@RequestMapping("/user")
 public class UserController {
   
   @Autowired

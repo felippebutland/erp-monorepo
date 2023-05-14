@@ -12,7 +12,7 @@ import com.backend.erpspring.Entities.CustomersEntity;
 import com.backend.erpspring.repository.CustomersRepository;
 
 @RestController
-@RequestMapping("/api/customer")
+@RequestMapping("/customer")
 public class CustomersController {
   @Autowired
   private CustomersRepository customersRepository;
