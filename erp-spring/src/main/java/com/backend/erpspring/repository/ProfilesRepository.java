@@ -5,8 +5,9 @@ import java.util.UUID;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.backend.erpspring.Entities.*;
+import com.backend.erpspring.Entities.ProfilesEntity;
 
 @Repository
-public interface CategoryRepository extends JpaRepository<Category, UUID> {
+public interface ProfilesRepository extends JpaRepository<ProfilesEntity, UUID> {
+  
 }

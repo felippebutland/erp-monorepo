@@ -12,6 +12,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
+
 @Getter
 @Setter
 @Entity
@@ -30,4 +31,12 @@ public class ProfilesFeaturesEntity {
   @ManyToOne
   @JoinColumn(name = "feature_id")
   private FeaturesEntity feature;  
+
+
+  public ProfilesFeaturesEntity(ProfilesEntity profile, FeaturesEntity feature) {
+    this.profile = profile;
+    this.feature = feature;
+    this.createdAt = new Date(System.currentTimeMillis());
+    this.updatedAt = new Date(System.currentTimeMillis()); // Assuming you also want to set updatedAt when creating a new entity
+  }
 }

@@ -24,12 +24,8 @@ public class SalesController {
     }
 
     @PostMapping
-    public void createUser(SalesEntity user) {
+    public void createSales(SalesEntity user) {
         salesRepository.save(user);
-    }
-
-    @GetMapping("/{id}")
-    public SalesEntity getUser(UUID id) {
-        return salesRepository.findById(id).orElseThrow();
+        
     }
 }

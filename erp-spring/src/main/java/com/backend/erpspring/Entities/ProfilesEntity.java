@@ -22,4 +22,9 @@ public class ProfilesEntity {
 
   private String name;
   private Date createdAt;
+
+  public ProfilesEntity(String name) {
+    this.name = name;
+    this.createdAt = new Date(System.currentTimeMillis());
+  }
 }

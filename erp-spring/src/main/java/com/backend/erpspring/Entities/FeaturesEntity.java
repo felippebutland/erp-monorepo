@@ -21,4 +21,10 @@ public class FeaturesEntity {
 	private UUID id;
   private String name;
   private Date createdAt;
+
+
+  public FeaturesEntity(String name) {
+    this.name = name;
+    this.createdAt = new Date(System.currentTimeMillis());
+  }
 }

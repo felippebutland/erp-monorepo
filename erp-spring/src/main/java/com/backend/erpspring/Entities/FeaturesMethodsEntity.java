@@ -23,4 +23,9 @@ public class FeaturesMethodsEntity {
 	private UUID id;
   private String name;
   private Date createdAt;
+
+  public FeaturesMethodsEntity(String name) {
+    this.name = name;
+    this.createdAt = new Date(System.currentTimeMillis());
+  }
 }
