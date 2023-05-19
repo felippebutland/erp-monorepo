@@ -12,8 +12,12 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
             .authorizeRequests()
-                .requestMatchers("/login").permitAll() // Permitir o acesso ao login sem autenticação
-                .requestMatchers("/address/**", "/categories/**", "/customers/**", "/products/**", "/sales/**", "/users/**").authenticated() // Autenticar todas as requisições para '/address'
+                .requestMatchers("/login").permitAll()
+                .requestMatchers("/address/**").hasRole("ADMIN")
+                .requestMatchers("/categories/**").hasRole("ADMIN")
+                .requestMatchers("/customers/**").hasRole("ADMIN")
+                .requestMatchers("/sales/**").hasRole("ADMIN")
+                .requestMatchers("/users/**").hasRole("ADMIN")
                 .and()
             .formLogin()
                 .loginPage("/login")

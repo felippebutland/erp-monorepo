@@ -22,7 +22,6 @@ public class SalesController {
     public List<SalesEntity> getAllSales() {
         return salesRepository.findAll();
     }
-
     @PostMapping
     public void createSales(SalesEntity user) {
         salesRepository.save(user);
