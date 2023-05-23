@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'erp-frontend';
+  toggle(event: Event) {
+    const element = event.target as HTMLElement;
+    element.classList.toggle('open');
+  }
 }
