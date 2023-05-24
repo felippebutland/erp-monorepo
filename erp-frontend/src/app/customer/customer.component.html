@@ -1,1 +1,39 @@
-<p>customer works!</p>
+<div class="customer-container">
+  <form>
+    <div class="form-field">
+      <label for="name">Nome:</label>
+      <input type="text" id="name" name="name">
+    </div>
+
+    <div class="form-field">
+      <label for="cpf_cnpj">CPF/CNPJ:</label>
+      <input type="text" id="cpf_cnpj" name="cpf_cnpj">
+    </div>
+
+    <div class="form-field">
+      <label for="email">e-mail:</label>
+      <input type="text" id="email" name="email">
+    </div>
+
+    <div class="form-field">
+      <label for="phone">telefone:</label>
+      <input type="text" id="phone" name="phone">
+    </div>
+
+    <div class="multiselect-container" (click)="fetchData()" [class.open]="dropdownOpen">
+      <div class="selected-items">
+        <span *ngIf="selectedOptions.length === 0">Selecione opções</span>
+        <span *ngIf="selectedOptions.length > 0">{{ selectedOptions.length }} opções selecionadas</span>
+      </div>
+
+      <ul *ngIf="dropdownOpen">
+        <li *ngFor="let option of options" (click)="toggleSelection(option)">
+          <input type="checkbox" [checked]="isSelected(option)">
+          {{ option }}
+        </li>
+      </ul>
+    </div>
+
+    <input type="submit" value="Submit">
+  </form>
+</div>

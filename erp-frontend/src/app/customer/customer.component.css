@@ -1,0 +1,21 @@
+.customer-container {
+  margin-left: 260px;
+}
+
+.form-field {
+  margin-bottom: 20px;
+}
+
+.form-field label {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.form-field input,
+.form-field select {
+  width: 50%;
+  height: 35px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
